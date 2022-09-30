@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home/home.component';
 import Navigation from './pages/navigation/navigation.component';
 import Authentication from './pages/authentication/authentication.component';
-import Shop from './routes/shop/shop.component';
-import Checkout from './routes/checkout/checkout.component';
+import Shop from './pages/shop/shop.component';
+import Checkout from './pages/checkout/checkout.component';
 
 const App = () => {
   return (
