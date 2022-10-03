@@ -9,6 +9,7 @@ import {
 
 import { CATEGORIES_ACTION_TYPES } from './category.types';
 
+// put = dispatch an action; call = call the async function with its params
 export function* fetchCategoriesAsync() {
   try {
     const categoriesArray = yield call(getCategoriesAndDocuments, 'categories');
@@ -18,6 +19,7 @@ export function* fetchCategoriesAsync() {
   }
 }
 
+// take latest action 
 export function* onFetchCategories() {
   yield takeLatest(
     CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START,
@@ -25,6 +27,7 @@ export function* onFetchCategories() {
   );
 }
 
+//wait until every yields is completed
 export function* categoriesSaga() {
   yield all([call(onFetchCategories)]);
 }

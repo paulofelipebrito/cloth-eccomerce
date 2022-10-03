@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
-
+//memorization'
+//Avoid unnecessary re-renders
 const selectCategoryReducer = (state) => state.categories;
 
 export const selectCategories = createSelector(
