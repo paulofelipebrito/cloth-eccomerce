@@ -1,4 +1,4 @@
-import { compose, applyMiddleware } from 'redux';
+import { compose, createStore, applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
@@ -29,10 +29,16 @@ const composeEnhancer =
     window &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
   compose;
+// const composeEnhancer = compose;
 
 const composedEnhancers = composeEnhancer(applyMiddleware(...middleWares));
 
-export const store = configureStore(
+// export const store = configureStore({
+//   reducer: persistedReducer,
+//   preloadedState: undefined,
+//   enhancers: [composedEnhancers]
+// });
+export const store = createStore(
   persistedReducer,
   undefined,
   composedEnhancers
