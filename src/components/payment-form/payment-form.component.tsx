@@ -62,10 +62,15 @@ const PaymentForm = () => {
     setIsProcessingPayment(false);
 
     if (paymentResult.error) {
-      alert(paymentResult.error);
+      // if(paymentResult.paymentIntent && paymentResult.paymentIntent.status !== 'succeeded'){
+      //   alert('Payment Rejected');
+      // }
+      // // alert(paymentResult.error);
     } else {
       if (paymentResult.paymentIntent.status === 'succeeded') {
         alert('Payment Successful');
+      } else {
+        alert('Payment Rejected');
       }
     }
   };
