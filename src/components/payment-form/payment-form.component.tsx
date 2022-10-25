@@ -80,7 +80,11 @@ const PaymentForm = () => {
   return (
     <PaymentFormContainer>
       <FormContainer onSubmit={paymentHandler}>
-        <h2>Credit Card Payment: </h2>
+        <h2>
+        Card Payment: Credit
+        </h2>
+          {/* <br />
+          <span>4242 4242 4242 4242 - Exp: 01/20 - CVV: 123</span> */}
         <CardElement />
         <PaymentButton
           isLoading={isProcessingPayment}
