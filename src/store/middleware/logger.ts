@@ -16,4 +16,3 @@ export const loggerMiddleware: Middleware<{}, RootState> =
 
     console.log('next state: ', store.getState());
   };
-};
