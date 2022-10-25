@@ -50,29 +50,31 @@ const PaymentForm = () => {
 
     if (!ifValidCardElement(cardDetails)) return;
 
-    const paymentResult = await stripe.confirmCardPayment(client_secret, {
-      payment_method: {
-        card: cardDetails,
-        billing_details: {
-          name: currentUser ? currentUser.displayName : 'Guest',
+    try{
+      const paymentResult = await stripe.confirmCardPayment(client_secret, {
+        payment_method: {
+          card: cardDetails,
+          billing_details: {
+            name: currentUser ? currentUser.displayName : 'Guest',
+          },
         },
-      },
-    });
-
-    setIsProcessingPayment(false);
-
-    if (paymentResult.error) {
-      // if(paymentResult.paymentIntent && paymentResult.paymentIntent.status !== 'succeeded'){
-      //   alert('Payment Rejected');
-      // }
-      // // alert(paymentResult.error);
-    } else {
-      if (paymentResult.paymentIntent.status === 'succeeded') {
+      });
+      setIsProcessingPayment(false);
+      if (!paymentResult.error && paymentResult.paymentIntent.status === 'succeeded') {
         alert('Payment Successful');
-      } else {
-        alert('Payment Rejected');
       }
+    // if (paymentResult.error) {
+    //   alert(paymentResult.error);
+    // } else {
+    //   if (paymentResult.paymentIntent.status === 'succeeded') {
+    //     alert('Payment Successful');
+    //   }
+    // }
+    } catch (err) {
+      alert('Payment Rejected');
     }
+
+    
   };
 
   return (
