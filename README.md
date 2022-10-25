@@ -56,6 +56,8 @@ If you're confused about where you are, try this [**this link**][deploy-url] to 
 
 This project was built with intention to study redux, stripe and typescript.
 
+**You can test the payment section with card number: 4242 4242 4242 4242**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
