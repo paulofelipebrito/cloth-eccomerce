@@ -50,7 +50,7 @@
 </p>
 </div>
 
-Welcome to the _GitHub repository_ of my **Crypto Coins** project! Here you can find information about the project's development, such as which technologies were used, how to install and run the project, usage and more.
+Welcome to the _GitHub repository_ of my **Cloth Eccomerce** project! Here you can find information about the project's development, such as which technologies were used, how to install and run the project, usage and more.
 
 If you're confused about where you are, try this [**this link**][deploy-url] to the deployed project instead 😄.
 
